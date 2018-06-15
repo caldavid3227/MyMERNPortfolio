@@ -1,0 +1,61 @@
+Goal:
+To develope a dynamic, mondern, and self sufficient portfolio from the ground up.
+Establish flowing, pleasing UI with UX features.
+Embed new technologies and skills(I.e. react portals and easy state).
+
+Steps:
+1) Set up server/backend
+2) Set up DB
+3) Set up Front-End
+4) Set up middleware
+5)Test and deploy
+
+I)Back-End/DB:
+	A)Server-
+		1)Set up local micro server with Express and Node
+			a.Import required packages
+				1.Import Compiler and Transpiler(Watchify/Browserify)
+			b.Debug/Incorperate Node engine 
+			c.Establish status/error codes(Catch&Throw)
+		2)Set up and tie in DB
+			a.Set up custom Mongo-DB
+				1.Set host name
+				2.Set port 
+			b.Install and import '.env'
+			c.Tie '.env' to DB
+				1.Set env to match DB
+			d.Handle Mongo promise in server
+				1.Require BlueBird
+				2.Initialize with '.env' in server
+	...
+II)Test:
+	B)Back-End-
+		1)Ensure server initializes X
+		2)Ensure compiler/transpiler are functional
+		3)Ensure connection to DB via server
+			a.Ensure BD host/port and match in '.env'
+			b.Require DB Start up for server 
+	...
+II)Middleware:
+	C)Set up Handle bars-
+		1)Establish HTML files
+		2)Set up handle bars to tie Front and Back-End together
+	...
+III)Front-End:
+	D)UI-
+		1)Set up high level UI(This is to tie everything up nothing fancy just functional)
+			a.Create React Component for Nav-Bar(Basic functionality purposes)
+				1.Set up component to global state 
+				2.Place component in seperate file to be read by seperate components
+					a-Export component
+			b.Create 2 React Components for DOM elements 
+				1.Import Nav-Bar
+				2.Tie each page together
+					a-Import & Export
+				3.Set up Back-End route for server request for each page 
+			c.Create React routers  
+				1.Establish primary page
+				2.Route primary to Back-End(Display on server start)
+	...
+IV)Test:
+	E)Routes-
