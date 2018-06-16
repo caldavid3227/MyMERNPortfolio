@@ -17,8 +17,22 @@
     "url": "https://github.com/caldavid3227/MyMERNPortfolio/issues"
   },
   "homepage": "https://github.com/caldavid3227/MyMERNPortfolio#readme",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:js": "browserify app/main.js -t [ babelify --presets [es2015 react] ] -o public/js/bundle.js",
+    "deploy": "npm test && git push heroku master",
+    "postinstall": "npm run build",
+    "start": "node server.js",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "mocha test/client --recursive --compilers js:babel-register",
+    "test:server": "mocha test/server --recursive --compilers js:babel-register",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:js": "watchify app/main.js -t [ babelify --presets [es2015 react] ] -v -o public/js/bundle.js",
+    "sass": "node-sass --source-map true node_modules/motion-ui/src -o dist/css"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "browserify": "^16.2.2",
     "express": "^4.16.3",
     "mongodb": "^3.0.10",
     "mongoose": "^5.1.5",
